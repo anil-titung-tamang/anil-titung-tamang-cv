@@ -1,0 +1,164 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[margin=0.8in]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{tabularx}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=blue,
+}
+
+% Section Headers Setup
+\titleformat{\section}{\large\bfseries\MakeUppercase}{}{0em}{}[\titlerule]
+\titlespacing*{\section}{0pt}{12pt}{6pt}
+
+\setlist[itemize]{leftmargin=0.2in, topsep=2pt, itemsep=2pt}
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	HEADER
+%----------------------------------------------------------------------------------------
+\begin{center}
+    {\Huge \textbf{Anil Tamang}} \\ \vspace{6pt}
+    Banepa, Bagmati Province, Nepal \\
+    Email: \href{mailto:anil.titung.tamang@gmail.com}{anil.titung.tamang@gmail.com} \quad \vline \quad
+    Website: \href{https://tamanganil.com.np}{tamanganil.com.np} \\
+    GitHub: \href{https://github.com/anil-titung-tamang}{github.com/anil-titung-tamang} \quad \vline \quad
+    LinkedIn: \href{https://www.linkedin.com/in/anil-titung-tamang/}{linkedin.com/in/anil-titung-tamang}
+\end{center}
+
+\vspace{4pt}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+\section{Education}
+
+\textbf{Kantipur City College} \hfill Putalisadak, Kathmandu, Nepal \\
+\textit{Bachelor of Computer Engineering} \hfill 2021 -- 2026
+
+%----------------------------------------------------------------------------------------
+%	RESEARCH INTERESTS
+%----------------------------------------------------------------------------------------
+\section{Research Interests}
+\begin{itemize}
+    \item \textbf{Low-Resource Language Technology:} Automatic Speech Recognition (ASR), Text-to-Speech (TTS), and Natural Language Processing (NLP) for endangered Himalayan languages (Nepali, Tibetan, Tamang).
+    \item \textbf{Data Engineering Infrastructure:} Custom dataset annotation pipelines, synthetic voice generation, Supervised Fine-Tuning (SFT) / Reinforcement Learning with Verifiable Rewards (RLVR) data curation, and linguistic quality control.
+    \item \textbf{Accessible \& On-Device AI:} Model quantization (TFLite, whisper.cpp), offline edge deployment for low-connectivity regions, and multimodal AI for social good.
+\end{itemize}
+
+%----------------------------------------------------------------------------------------
+%	PUBLICATIONS & CONFERENCE PRESENTATIONS
+%----------------------------------------------------------------------------------------
+\section{Publications \& Conference Presentations}
+
+\begin{enumerate}[leftmargin=0.2in]
+    \item \textbf{Tamang, A.} et al. (2026). ``Bridging the Digital Divide: Speech Recognition Technology for Endangered Language Preservation in the Himalayan Region.'' \textit{Purbanchal University International Conference (PUiCON 2026)}.
+    \begin{itemize}
+        \item Fine-tuned OpenAI's Whisper model on multi-dialect Tibetan speech corpora for low-resource ASR.
+        \item Optimized the model for offline edge deployment on Android via \texttt{whisper.cpp}, enabling field use in internet-restricted Himalayan villages.
+    \end{itemize}
+\end{enumerate}
+
+%----------------------------------------------------------------------------------------
+%	RESEARCH & PROFESSIONAL EXPERIENCE
+%----------------------------------------------------------------------------------------
+\section{Research \& Professional Experience}
+
+\textbf{Himalaya AI Research Lab} \hfill Kathmandu, Nepal \\
+\textit{Board Member \& Part-Time Data Engineer} \hfill May 2026 -- Present
+\begin{itemize}
+    \item Co-founding member of an initiative dedicated to building Nepal's sovereign AI ecosystem.
+    \item Designing data pipelines and evaluation frameworks for Nepali-optimized Large Language Models (LLMs) targeting educational accessibility and public-sector deployment.
+    \item Supervising 7 research interns on Supervised Fine-Tuning (SFT), RLVR dataset engineering, and voice-synthesis data pipelines.
+    \item Contributing to national AI data-policy advocacy and open dataset infrastructure standards.
+\end{itemize}
+
+\vspace{4pt}
+
+\textbf{Keetemu} \hfill Banepa, Nepal \\
+\textit{AI Researcher Intern} \hfill June 2026 -- Present
+\begin{itemize}
+    \item Conducting research on speech synthesis and TTS pipeline optimization for low-resource regional languages.
+    \item Implementing model quantization techniques to optimize speech pipelines for resource-constrained edge hardware.
+\end{itemize}
+
+%----------------------------------------------------------------------------------------
+%	TEACHING & MENTORSHIP
+%----------------------------------------------------------------------------------------
+\section{Teaching \& Mentorship}
+
+\textbf{AI Research Internship Supervisor} -- Himalaya AI Research Lab \hfill 2026 -- Present
+\begin{itemize}
+    \item Mentoring 7 interns in Supervised Fine-Tuning (SFT) workflows, RLVR reward-modeling data pipelines, and low-resource speech-dataset curation.
+\end{itemize}
+
+\vspace{4pt}
+
+\textbf{Technical Workshop Instructor} -- Kantipur City College \hfill 2024 -- Present
+\begin{itemize}
+    \item Designed and conducted hands-on technical workshops covering Django web development, database design, and Git/GitHub version-control practices.
+\end{itemize}
+
+%----------------------------------------------------------------------------------------
+%	INDEPENDENT RESEARCH & DATASET INFRASTRUCTURE PROJECTS
+%----------------------------------------------------------------------------------------
+\section{Low-Resource AI \& Dataset Infrastructure Projects}
+
+\textbf{Custom Tokenizer \& NLP Infrastructure for Tamang Language} \hfill 2026
+\begin{itemize}
+    \item Developing a custom tokenization vocabulary and subword segmentation scheme tailored to the low-resource Tamang language, aimed at improving language-model token efficiency and downstream representation.
+\end{itemize}
+
+\vspace{4pt}
+
+\textbf{DataSpeech Nepali -- Acoustic Dataset Annotation Pipeline} \hfill 2026
+\begin{itemize}
+    \item Adapted the Data-Speech framework specifically for Devanagari/Nepali script, replacing English grapheme-to-phoneme (G2P) components with an \texttt{espeak-ng} IPA translation and Devanagari syllable fallback.
+    \item Built automated acoustic-annotation modules extracting metrics (PESQ, STOI, SI-SDR, pitch variance, reverberation) and converted them into natural-language descriptions for Parler-TTS conditioning.
+\end{itemize}
+
+\vspace{4pt}
+
+\textbf{Out-of-Vocabulary (OOV) Nepali TTS Benchmark} \hfill 2026
+\begin{itemize}
+    \item Formulated an empirical framework measuring Nepali TTS pronunciation accuracy, documenting a 22.6\% OOV Intelligibility Error Rate (IER) baseline versus an 18.1\% in-vocabulary rate.
+    \item Designed systematic, targeted dataset-curation workflows covering proper nouns, regional names, brands, and code-mixed terminology for future fine-tuning.
+\end{itemize}
+
+\vspace{4pt}
+
+\textbf{JibanSetu -- Edge Multimodal AI System} \hfill 2026
+\begin{itemize}
+    \item Developed a lightweight, audio-based emergency-classification system using a fine-tuned YAMNet model, achieving 91.8\% accuracy and a 92.2\% weighted F1-score.
+    \item Integrated the TFLite model on Android via Flutter, fusing audio-event triggers with accelerometer, gyroscope, and GPS sensor data for sub-3-second alert distribution.
+\end{itemize}
+
+\vspace{4pt}
+
+\textbf{MeriAama \& Medi-Mate -- Applied Healthcare AI Platforms} \hfill 2026
+\begin{itemize}
+    \item Built Django-based healthcare applications incorporating XGBoost predictive-risk models, psychometric assessment, and personal health tracking.
+    \item Integrated OCR (EasyOCR, TrOCR) pipelines to digitize scanned hospital records into structured, visualized health data with automated recommendations.
+\end{itemize}
+
+%----------------------------------------------------------------------------------------
+%	TECHNICAL SKILLS
+%----------------------------------------------------------------------------------------
+\section{Technical Skills \& Methodologies}
+
+\begin{itemize}
+    \item \textbf{AI/ML Frameworks:} PyTorch, TensorFlow, Hugging Face (Transformers, Datasets), TFLite, YAMNet, Whisper, Indic Parler-TTS, Qwen TTS, Agentic AI.
+    \item \textbf{Data Engineering \& Tools:} Python, Pandas, NumPy, Parquet, custom ETL pipelines, SFT/RLVR curation, dataset validation, Jupyter, Marimo, Google Colab, Kaggle, RunPod, Lightning AI.
+    \item \textbf{Language Engineering \& Vision:} Tokenizer development, Nepali/Tamang NLP, acoustic annotation, EasyOCR, Surya OCR, TrOCR.
+    \item \textbf{Software \& Web Engineering:} Django, FastAPI, Node.js, React, Next.js, Flutter, Dart, PostgreSQL, MySQL, Firebase, Docker, Git/GitHub, GitHub Actions, AWS (beginner).
+\end{itemize}
+
+\end{document}
