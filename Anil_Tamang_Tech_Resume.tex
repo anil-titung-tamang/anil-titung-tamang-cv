@@ -18,11 +18,11 @@
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
-\addtolength{\oddsidemargin}{-0.6in}
-\addtolength{\evensidemargin}{-0.6in}
-\addtolength{\textwidth}{1.2in}
-\addtolength{\topmargin}{-0.9in}
-\addtolength{\textheight}{2.1in}
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.0in}
+\addtolength{\topmargin}{-0.5in}
+\addtolength{\textheight}{1.0in}
 
 \urlstyle{same}
 
@@ -33,7 +33,7 @@
 % Section formatting
 \titleformat{\section}{
   \vspace{-4pt}\scshape\raggedright\large
-}{}{0em}{}[\color{black}\vline height 1.5pt width \linewidth\vspace{-5pt}]
+}{}{0em}{}[\color{black}\vline height 0.6pt width \linewidth\vspace{-5pt}]
 
 \newcommand{\resumeItem}[1]{
   \item\small{
@@ -63,7 +63,7 @@
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
 \newcommand{\resumeItemListStart}{\begin{itemize}}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-2pt}}
 
 \begin{document}
 
@@ -109,10 +109,10 @@
       \resumeItemListEnd
 
     \resumeSubheading
-      {Keetemu}{June 2026 -- Present}
-      {AI Researcher Intern}{Banepa, Nepal}
+      {KETEMU (Knowledge Ecosystem for Tech, Ethics \& Multisectoral Understanding)}{June 2026 -- Present}
+      {AI Researcher Intern}{Remote -- Southeast Asia (HQ: Jakarta, Indonesia)}
       \resumeItemListStart
-        \resumeItem{Conducting applied research on low-resource speech technologies, fine-tuning ASR/TTS pipeline architectures, and optimizing model quantization for edge deployment.}
+        \resumeItem{Contributing AI/ML research support to a Southeast Asia-based nonprofit focused on responsible innovation, AI ethics, and technology governance across Asia.}
       \resumeItemListEnd
 
   \resumeSubHeadingListEnd
@@ -121,14 +121,21 @@
 \section{Projects}
     \resumeSubHeadingListStart
       \resumeProjectHeading
-          {\textbf{JibanSetu -- On-Device AI Emergency Response System} $|$ \emph{Flutter, YAMNet, TFLite, Firebase}}{2026}
+          {\textbf{JibanSetu -- On-Device AI Emergency Response System} $|$ \emph{Flutter, YAMNet, TFLite, Firebase}}{2025}
           \resumeItemListStart
             \resumeItem{Engineered an end-to-end multimodal emergency-detection pipeline (sub-3s alert latency) fusing fine-tuned audio ML with GPS, accelerometer, and gyroscope sensor data.}
             \resumeItem{Fine-tuned YAMNet on 16kHz audio with group-aware dataset splitting and augmentation, achieving \textbf{91.8\% accuracy} and \textbf{92.2\% weighted F1} (vs.\ 78.2\% CNN spectrogram baseline).}
           \resumeItemListEnd
 
       \resumeProjectHeading
-          {\textbf{DataSpeech Nepali -- Speech Dataset Annotation Infrastructure} $|$ \emph{Python, espeak-ng, Parquet}}{2026}
+          {\textbf{Gymkhana -- Multilingual RLVR Environment Framework} $|$ \emph{Python, Pydantic AI, GRPO-style Rollouts}}{2026}
+          \resumeItemListStart
+            \resumeItem{Built a synthetic-data and RLVR ``gym'' that runs GRPO-style parallel rollout groups per task, verifies outputs, assigns rewards, and exports reward-filtered SFT/ShareGPT training data with full task/rollout provenance.}
+            \resumeItem{Designed pluggable task environments spanning Nepali/English transliteration, instruction-following, math reasoning, multi-hop QA, long-context reasoning, and sandboxed software-engineering tasks, with model-agnostic inference routing across Anthropic and OpenAI providers.}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{DataSpeech Nepali -- Speech Dataset Annotation Infrastructure} $|$ \emph{Python, espeak-ng, Parquet}}{2025}
           \resumeItemListStart
             \resumeItem{Adapted the Data-Speech pipeline for Nepali TTS, engineering a custom Devanagari syllable fallback via \texttt{espeak-ng} to replace English G2P dependencies.}
             \resumeItem{Automated extraction of acoustic metrics (PESQ, STOI, SI-SDR, pitch, SNR, reverberation) calibrated to Nepali speech, generating natural-language descriptions for Parler-TTS conditioning.}
@@ -141,21 +148,52 @@
           \resumeItemListEnd
 
       \resumeProjectHeading
-          {\textbf{MeriAama \& Medi-Mate -- Full-Stack AI Healthcare Platforms} $|$ \emph{Django, XGBoost, OCR, PostgreSQL}}{2026}
+          {\textbf{MeriAama \& Medi-Mate -- Full-Stack AI Healthcare Platforms} $|$ \emph{Django, XGBoost, OCR, PostgreSQL}}{2024}
           \resumeItemListStart
             \resumeItem{Built Django apps with XGBoost risk-prediction models, psychometric assessment, and EasyOCR/TrOCR pipelines digitizing hospital records into visualized, actionable insights.}
           \resumeItemListEnd
     \resumeSubHeadingListEnd
 
-%-----------RESEARCH, PUBLICATIONS & MENTORSHIP-----------
-\section{Research, Publications \& Mentorship}
+%-----------RESEARCH & PUBLICATIONS-----------
+\section{Research \& Publications}
   \resumeSubHeadingListStart
     \resumeProjectHeading
         {\textbf{PUiCON 2026} -- Co-Author $|$ \emph{Purbanchal University International Conference}}{2026}
         \resumeItemListStart
           \resumeItem{\textit{``Bridging the Digital Divide: Speech Recognition Technology for Endangered Language Preservation in the Himalayan Region.''} Fine-tuned Whisper on multi-dialect Tibetan speech for low-resource ASR; deployed offline on Android via \texttt{whisper.cpp}.}
-          \resumeItem{\textbf{Also:} Developing a custom tokenizer for Tamang, a low-resource Himalayan language; led university workshops on Django and Git/GitHub for student developers.}
+        \resumeItemListEnd
+
+    \resumeProjectHeading
+        {\textbf{Custom Tokenizer for Tamang Language} $|$ \emph{NLP Infrastructure, Low-Resource Language Tech}}{}
+        \resumeItemListStart
+          \resumeItem{Developing a custom tokenizer and subword segmentation scheme for Tamang, a low-resource Himalayan language, to support future language-model training and NLP infrastructure for underrepresented languages.}
         \resumeItemListEnd
   \resumeSubHeadingListEnd
+
+
+%-----------LEADERSHIP & EXTRACURRICULAR-----------
+\section{Leadership \& Extracurricular Activities}
+    \resumeSubHeadingListStart
+      \resumeSubheading
+          {Technical Lead -- Creators Club}{2023 -- 2026}
+          {Kantipur City College}{Kathmandu, Nepal}
+          \resumeItemListStart
+            \resumeItem{Led the college's technical club; organized and hosted flagship events including GameJam (a game-development event) and Voices \& Vision (a public-speaking event).}
+            \resumeItem{Conducted hands-on workshops on Django and Git/GitHub for student developers.}
+            \resumeItem{Built and exhibited \textbf{Smart Socket}, an IoT-based project, at the KCC Exhibition 2024 as part of a hardware initiative.}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{AI Presentation -- German Embassy, Nepal} $|$ \emph{Representing Himalaya AI Research Lab}}{2026}
+          \resumeItemListStart
+            \resumeItem{Presented on AI development in Nepal before the German Ambassador to Nepal, representing Himalaya AI Research Lab.}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{Hackathons \& Competitions}}{2024 -- 2026}
+          \resumeItemListStart
+            \resumeItem{Participated in the DAV Hackathon and the UNESCO Hackathon; placed in the \textbf{Top 20 nationally (Nepal region)} at the Harvard Health Hackathon.}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
 
 \end{document}
