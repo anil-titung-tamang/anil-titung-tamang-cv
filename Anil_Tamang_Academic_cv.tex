@@ -1,164 +1,165 @@
-\documentclass[11pt,a4paper]{article}
+\documentclass[11pt]{article}
 
-\usepackage[utf8]{inputenc}
-\usepackage[margin=0.8in]{geometry}
-\usepackage{titlesec}
+\usepackage[margin=1in]{geometry}
+\usepackage{mathpazo}
 \usepackage{enumitem}
-\usepackage{hyperref}
-\usepackage{tabularx}
+\usepackage[hidelinks,colorlinks=true,urlcolor=blue,linkcolor=blue]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{changepage}
 
-\hypersetup{
-    colorlinks=true,
-    linkcolor=blue,
-    filecolor=magenta,
-    urlcolor=blue,
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\small \thepage\ of \pageref{LastPage}}
+
+\setlist[itemize]{leftmargin=0.2in, topsep=2pt, itemsep=2pt, parsep=0pt}
+
+% Section label placed in the left margin; content indented to align under it.
+\newcommand{\cvlabel}[1]{\hspace*{-1.3in}\parbox[t][\baselineskip][t]{1.05in}{\raggedright\scshape #1\par}\hspace{0.25in}}
+\newenvironment{cvsection}[1]{%
+  \begin{adjustwidth}{1.3in}{0in}\noindent\cvlabel{#1}%
+}{%
+  \end{adjustwidth}\vspace{10pt}
 }
-
-% Section Headers Setup
-\titleformat{\section}{\large\bfseries\MakeUppercase}{}{0em}{}[\titlerule]
-\titlespacing*{\section}{0pt}{12pt}{6pt}
-
-\setlist[itemize]{leftmargin=0.2in, topsep=2pt, itemsep=2pt}
 
 \begin{document}
 
 %----------------------------------------------------------------------------------------
 %	HEADER
 %----------------------------------------------------------------------------------------
-\begin{center}
-    {\Huge \textbf{Anil Tamang}} \\ \vspace{6pt}
-    Banepa, Bagmati Province, Nepal \\
-    Email: \href{mailto:anil.titung.tamang@gmail.com}{anil.titung.tamang@gmail.com} \quad \vline \quad
-    Website: \href{https://tamanganil.com.np}{tamanganil.com.np} \\
-    GitHub: \href{https://github.com/anil-titung-tamang}{github.com/anil-titung-tamang} \quad \vline \quad
-    LinkedIn: \href{https://www.linkedin.com/in/anil-titung-tamang/}{linkedin.com/in/anil-titung-tamang}
-\end{center}
+\noindent{\LARGE \textbf{Anil Tamang}} \hfill {\itshape September, 2026}
+\vspace{12pt}
+\par
 
-\vspace{4pt}
+%----------------------------------------------------------------------------------------
+%	CONTACT INFORMATION
+%----------------------------------------------------------------------------------------
+\begin{cvsection}{Contact\\Information}
+Himalaya AI Research Lab \hfill E-mail: \href{mailto:anil.titung.tamang@gmail.com}{anil.titung.tamang@gmail.com} \\
+Banepa, Bagmati Province \hfill Website: \href{https://tamanganil.com.np}{tamanganil.com.np} \\
+Nepal \hfill GitHub: \href{https://github.com/anil-titung-tamang}{github.com/anil-titung-tamang} \\
+\hfill LinkedIn: \href{https://www.linkedin.com/in/anil-titung-tamang/}{LinkedIn}
+\end{cvsection}
 
 %----------------------------------------------------------------------------------------
 %	EDUCATION
 %----------------------------------------------------------------------------------------
-\section{Education}
-
-\textbf{Kantipur City College} \hfill Putalisadak, Kathmandu, Nepal \\
-\textit{Bachelor of Computer Engineering} \hfill 2021 -- 2026
+\begin{cvsection}{Education}
+\textbf{Kantipur City College} \hfill 2021 -- 2026 \\
+\textit{B.E. in Computer Engineering} \hfill Putalisadak, Kathmandu, Nepal
+\end{cvsection}
 
 %----------------------------------------------------------------------------------------
 %	RESEARCH INTERESTS
 %----------------------------------------------------------------------------------------
-\section{Research Interests}
+\begin{cvsection}{Research\\Interests}
+\textbf{Areas:} Low-Resource Language Technology, Speech AI (ASR/TTS), Data Engineering for ML \\
+\textbf{Methods:} Dataset Annotation Pipelines, Model Fine-Tuning, SFT/RLVR Data Curation, On-Device/Edge AI, Agentic AI
+\end{cvsection}
+
+%----------------------------------------------------------------------------------------
+%	WORKING PAPERS / PUBLICATIONS
+%----------------------------------------------------------------------------------------
+\begin{cvsection}{Working\\Papers}
+Tamang, A. et al. (2026). ``Bridging the Digital Divide: Speech Recognition Technology for Endangered Language Preservation in the Himalayan Region.'' \textit{Purbanchal University International Conference (PUiCON 2026)}. Co-author.
+\end{cvsection}
+
+%----------------------------------------------------------------------------------------
+%	RESEARCH PROJECTS  (analogous to "Fieldwork" -- hands-on technical/data work)
+%----------------------------------------------------------------------------------------
+\begin{cvsection}{Research\\Projects}
+\textbf{JibanSetu -- On-Device AI Emergency Response System} \hfill 2025
 \begin{itemize}
-    \item \textbf{Low-Resource Language Technology:} Automatic Speech Recognition (ASR), Text-to-Speech (TTS), and Natural Language Processing (NLP) for endangered Himalayan languages (Nepali, Tibetan, Tamang).
-    \item \textbf{Data Engineering Infrastructure:} Custom dataset annotation pipelines, synthetic voice generation, Supervised Fine-Tuning (SFT) / Reinforcement Learning with Verifiable Rewards (RLVR) data curation, and linguistic quality control.
-    \item \textbf{Accessible \& On-Device AI:} Model quantization (TFLite, whisper.cpp), offline edge deployment for low-connectivity regions, and multimodal AI for social good.
+  \item Fine-tuned YAMNet for audio-based emergency classification, achieving 91.8\% accuracy and 92.2\% weighted F1 (vs.\ 78.2\% CNN spectrogram baseline)
+  \item Fused audio ML with GPS, accelerometer, and gyroscope sensor data for sub-3-second alert distribution via Flutter and Firebase
 \end{itemize}
 
-%----------------------------------------------------------------------------------------
-%	PUBLICATIONS & CONFERENCE PRESENTATIONS
-%----------------------------------------------------------------------------------------
-\section{Publications \& Conference Presentations}
-
-\begin{enumerate}[leftmargin=0.2in]
-    \item \textbf{Tamang, A.} et al. (2026). ``Bridging the Digital Divide: Speech Recognition Technology for Endangered Language Preservation in the Himalayan Region.'' \textit{Purbanchal University International Conference (PUiCON 2026)}.
-    \begin{itemize}
-        \item Fine-tuned OpenAI's Whisper model on multi-dialect Tibetan speech corpora for low-resource ASR.
-        \item Optimized the model for offline edge deployment on Android via \texttt{whisper.cpp}, enabling field use in internet-restricted Himalayan villages.
-    \end{itemize}
-\end{enumerate}
-
-%----------------------------------------------------------------------------------------
-%	RESEARCH & PROFESSIONAL EXPERIENCE
-%----------------------------------------------------------------------------------------
-\section{Research \& Professional Experience}
-
-\textbf{Himalaya AI Research Lab} \hfill Kathmandu, Nepal \\
-\textit{Board Member \& Part-Time Data Engineer} \hfill May 2026 -- Present
+\textbf{Gymkhana -- Multilingual RLVR Environment Framework} \hfill 2026
 \begin{itemize}
-    \item Co-founding member of an initiative dedicated to building Nepal's sovereign AI ecosystem.
-    \item Designing data pipelines and evaluation frameworks for Nepali-optimized Large Language Models (LLMs) targeting educational accessibility and public-sector deployment.
-    \item Supervising 7 research interns on Supervised Fine-Tuning (SFT), RLVR dataset engineering, and voice-synthesis data pipelines.
-    \item Contributing to national AI data-policy advocacy and open dataset infrastructure standards.
+  \item Built a synthetic-data/RLVR framework running GRPO-style parallel rollout groups, verifying and rewarding outputs, and exporting reward-filtered SFT training data
+  \item Designed pluggable task environments spanning Nepali/English transliteration, math reasoning, multi-hop QA, and sandboxed software-engineering tasks
 \end{itemize}
 
-\vspace{4pt}
-
-\textbf{Keetemu} \hfill Banepa, Nepal \\
-\textit{AI Researcher Intern} \hfill June 2026 -- Present
+\textbf{DataSpeech Nepali -- Acoustic Dataset Annotation Pipeline} \hfill 2025
 \begin{itemize}
-    \item Conducting research on speech synthesis and TTS pipeline optimization for low-resource regional languages.
-    \item Implementing model quantization techniques to optimize speech pipelines for resource-constrained edge hardware.
+  \item Adapted the Data-Speech framework for Devanagari/Nepali script, replacing English G2P components with an \texttt{espeak-ng} IPA translation and Devanagari syllable fallback
 \end{itemize}
-
-%----------------------------------------------------------------------------------------
-%	TEACHING & MENTORSHIP
-%----------------------------------------------------------------------------------------
-\section{Teaching \& Mentorship}
-
-\textbf{AI Research Internship Supervisor} -- Himalaya AI Research Lab \hfill 2026 -- Present
-\begin{itemize}
-    \item Mentoring 7 interns in Supervised Fine-Tuning (SFT) workflows, RLVR reward-modeling data pipelines, and low-resource speech-dataset curation.
-\end{itemize}
-
-\vspace{4pt}
-
-\textbf{Technical Workshop Instructor} -- Kantipur City College \hfill 2024 -- Present
-\begin{itemize}
-    \item Designed and conducted hands-on technical workshops covering Django web development, database design, and Git/GitHub version-control practices.
-\end{itemize}
-
-%----------------------------------------------------------------------------------------
-%	INDEPENDENT RESEARCH & DATASET INFRASTRUCTURE PROJECTS
-%----------------------------------------------------------------------------------------
-\section{Low-Resource AI \& Dataset Infrastructure Projects}
-
-\textbf{Custom Tokenizer \& NLP Infrastructure for Tamang Language} \hfill 2026
-\begin{itemize}
-    \item Developing a custom tokenization vocabulary and subword segmentation scheme tailored to the low-resource Tamang language, aimed at improving language-model token efficiency and downstream representation.
-\end{itemize}
-
-\vspace{4pt}
-
-\textbf{DataSpeech Nepali -- Acoustic Dataset Annotation Pipeline} \hfill 2026
-\begin{itemize}
-    \item Adapted the Data-Speech framework specifically for Devanagari/Nepali script, replacing English grapheme-to-phoneme (G2P) components with an \texttt{espeak-ng} IPA translation and Devanagari syllable fallback.
-    \item Built automated acoustic-annotation modules extracting metrics (PESQ, STOI, SI-SDR, pitch variance, reverberation) and converted them into natural-language descriptions for Parler-TTS conditioning.
-\end{itemize}
-
-\vspace{4pt}
 
 \textbf{Out-of-Vocabulary (OOV) Nepali TTS Benchmark} \hfill 2026
 \begin{itemize}
-    \item Formulated an empirical framework measuring Nepali TTS pronunciation accuracy, documenting a 22.6\% OOV Intelligibility Error Rate (IER) baseline versus an 18.1\% in-vocabulary rate.
-    \item Designed systematic, targeted dataset-curation workflows covering proper nouns, regional names, brands, and code-mixed terminology for future fine-tuning.
+  \item Documented a 22.6\% OOV Intelligibility Error Rate (IER) baseline versus an 18.1\% in-vocabulary rate; designed targeted dataset-curation workflows for future fine-tuning
 \end{itemize}
 
-\vspace{4pt}
-
-\textbf{JibanSetu -- Edge Multimodal AI System} \hfill 2026
+\textbf{Custom Tokenizer for Tamang Language} \hfill 2026
 \begin{itemize}
-    \item Developed a lightweight, audio-based emergency-classification system using a fine-tuned YAMNet model, achieving 91.8\% accuracy and a 92.2\% weighted F1-score.
-    \item Integrated the TFLite model on Android via Flutter, fusing audio-event triggers with accelerometer, gyroscope, and GPS sensor data for sub-3-second alert distribution.
+  \item Developing a custom tokenizer and subword segmentation scheme for Tamang, a low-resource Himalayan language
 \end{itemize}
-
-\vspace{4pt}
-
-\textbf{MeriAama \& Medi-Mate -- Applied Healthcare AI Platforms} \hfill 2026
-\begin{itemize}
-    \item Built Django-based healthcare applications incorporating XGBoost predictive-risk models, psychometric assessment, and personal health tracking.
-    \item Integrated OCR (EasyOCR, TrOCR) pipelines to digitize scanned hospital records into structured, visualized health data with automated recommendations.
-\end{itemize}
+\end{cvsection}
 
 %----------------------------------------------------------------------------------------
-%	TECHNICAL SKILLS
+%	WORK EXPERIENCE
 %----------------------------------------------------------------------------------------
-\section{Technical Skills \& Methodologies}
-
+\begin{cvsection}{Work\\Experience}
+\textbf{Himalaya AI Research Lab} \hfill Kathmandu, Nepal \\
+\textit{Board Member \& Part-Time Data Engineer} \hfill May 2026 -- Present
 \begin{itemize}
-    \item \textbf{AI/ML Frameworks:} PyTorch, TensorFlow, Hugging Face (Transformers, Datasets), TFLite, YAMNet, Whisper, Indic Parler-TTS, Qwen TTS, Agentic AI.
-    \item \textbf{Data Engineering \& Tools:} Python, Pandas, NumPy, Parquet, custom ETL pipelines, SFT/RLVR curation, dataset validation, Jupyter, Marimo, Google Colab, Kaggle, RunPod, Lightning AI.
-    \item \textbf{Language Engineering \& Vision:} Tokenizer development, Nepali/Tamang NLP, acoustic annotation, EasyOCR, Surya OCR, TrOCR.
-    \item \textbf{Software \& Web Engineering:} Django, FastAPI, Node.js, React, Next.js, Flutter, Dart, PostgreSQL, MySQL, Firebase, Docker, Git/GitHub, GitHub Actions, AWS (beginner).
+  \item Co-founding member of an initiative building Nepal's sovereign AI ecosystem
+  \item Designing data pipelines and evaluation frameworks for Nepali-optimized LLMs targeting education and public-sector deployment
+  \item Supervising 7 research interns on SFT, RLVR dataset engineering, and voice-synthesis data pipelines
 \end{itemize}
+
+\textbf{KETEMU (Knowledge Ecosystem for Tech, Ethics \& Multisectoral Understanding)} \hfill Remote -- Southeast Asia \\
+\textit{AI Researcher Intern} \hfill June 2026 -- Present
+\begin{itemize}
+  \item Contributing AI/ML research support to a Southeast Asia-based nonprofit focused on responsible innovation, AI ethics, and technology governance
+\end{itemize}
+\end{cvsection}
+
+%----------------------------------------------------------------------------------------
+%	TEACHING EXPERIENCE
+%----------------------------------------------------------------------------------------
+\begin{cvsection}{Teaching\\Experience}
+\textbf{Research Mentor} \\
+\begin{itemize}
+  \item Himalaya AI Research Lab -- SFT, RLVR reward-modeling, and low-resource speech-dataset curation (2026 -- Present)
+\end{itemize}
+\textbf{Workshop Instructor} \\
+\begin{itemize}
+  \item Creators Club, Kantipur City College -- Django web development and Git/GitHub version control (2023 -- 2026)
+\end{itemize}
+\end{cvsection}
+
+%----------------------------------------------------------------------------------------
+%	LEADERSHIP AND SERVICE
+%----------------------------------------------------------------------------------------
+\begin{cvsection}{Leadership\\and Service}
+\textbf{Kantipur City College, Creators Club} \\
+\begin{itemize}
+  \item Technical Lead \hfill 2023 -- 2026 \\
+  Organized and hosted flagship events including GameJam (game development) and Voices \& Vision (public speaking); built and exhibited Smart Socket, an IoT-based hardware project, at the KCC Exhibition 2024.
+\end{itemize}
+\textbf{Himalaya AI Research Lab} \\
+\begin{itemize}
+  \item AI Presentation, German Embassy, Nepal \hfill 2026 \\
+  Presented on AI development in Nepal before the German Ambassador to Nepal.
+\end{itemize}
+\textbf{Hackathons \& Competitions} \\
+\begin{itemize}
+  \item DAV Hackathon, UNESCO Hackathon; Top 20 nationally (Nepal region), Harvard Health Hackathon \hfill 2024 -- 2026
+\end{itemize}
+\end{cvsection}
+
+%----------------------------------------------------------------------------------------
+%	OTHER INFORMATION
+%----------------------------------------------------------------------------------------
+\begin{cvsection}{Other\\Information}
+\textbf{Technical Skills}: Python, PyTorch, TensorFlow, Hugging Face, Django, FastAPI, React/Next.js, Flutter, PostgreSQL, Docker, Git \\
+\textbf{Languages}: [Nepali (Native), English (Fluent), Tamang (Heritage)] \\
+\textbf{Citizenship}: [Nepali]
+\end{cvsection}
 
 \end{document}
